@@ -253,7 +253,11 @@ class checker ():
         """ 调用通用文字识别, 图片参数为本地图片 """
         self.client.basicGeneral (image);
         """ 带参数调用通用文字识别, 图片参数为本地图片 """
-        re = self.client.basicGeneral (image)
+        try:
+            re = self.client.basicGeneral (image)
+            print(re)
+        except Exception as e:
+            print(e)
         return re['words_result'][0]['words'].replace (" ", "") if len (re['words_result']) > 0 else ""
 
     def decode_by_pytesseract(self, code_file_name):
