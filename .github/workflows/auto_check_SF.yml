@@ -31,8 +31,8 @@ jobs:
           sudo -E apt-get -yqq install python3
       - name: Install extensions
         run: |
-          pip3 install setuptools
-          pip3 install -r requirements.txt
+          pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple setuptools 
+          pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
           sudo add-apt-repository ppa:alex-p/tesseract-ocr
       - name: Install Chrome
         run: |
