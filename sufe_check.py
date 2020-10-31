@@ -111,6 +111,7 @@ class checker ():
                 exit (1)
 
             valid_code = self.get_valid_code (browser)
+            print(f"here {valid_code}")
             if (len (valid_code) < 5):
                 print("识别到的验证码不符合要求正在重试")
                 browser.refresh ()
